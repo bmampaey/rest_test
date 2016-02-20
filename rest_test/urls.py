@@ -21,10 +21,10 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 
 import app1.views
-router.register(r'app1', app1.views.RecordViewSet)
+router.register(r'app1', app1.views.RecordViewSet, base_name='app1')
 
 import app2.views
-router.register(r'app2', app1.views.RecordViewSet)
+router.register(r'app2', app2.views.RecordViewSet, base_name='app2')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
